@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+
+{%if result %}
+    {{result}}
+{%endif%}
+
+{% if builds%}
+
+<div class="container">
+    <div id="info"></div>
+  <h3>Budynki zrobione</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+      </tr>
+    </thead>
+    <tbody id="builds">
+        {% for b in builds %}
+        <tr>
+          <td>{{b.build.name}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{%endif%}
+
+
+    
+{% endblock %}

@@ -1,0 +1,92 @@
+
+{% extends "base.html.twig" %}
+{% block body %}
+
+{%if user_data%}
+
+<div class="container">
+    <div id="info"></div>
+  <h3>Dostępne surowce</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Drewno</th>
+        <th>Kamień</th>
+        <th>Złoto</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="user_wood">{{user_data.wood}}</td>
+        <td id="user_stone">{{user_data.stone}}</td>
+        <td id="user_golde">{{user_data.gold}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{%endif%}
+
+<div class="container">
+    <div id="info"></div>
+  <h3>Budynki aktualnie robione</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Pozostały czas</th>
+      </tr>
+    </thead>
+    <tbody id="builds_in_progress">
+        {% if builds_in_progress%}
+
+        {% for b in builds_in_progress %}
+        <tr>
+          <td>{{b.build.name}}</td>
+          <td>{{b.build.time}}</td>
+        </tr>
+      {% endfor %}
+      {%endif%}
+
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="container">
+    <div id="info"></div>
+
+  <h2>Budynki</h2>
+  <p>Lista dostępnych budynków:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nazwa budynku</th>
+        <th>Drewno</th>
+        <th>Kamień</th>
+        <th>Złoto</th>
+        <th>Czas (s)</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+            {% for build in build_list %}
+
+      <tr>
+        <td>{{ build.name }}</td>
+        <td>{{ build.wood }}</td>
+        <td>{{ build.stone }}</td>
+        <td>{{ build.gold }}</td>
+        <td>{{ build.time }}</td>
+        <td><a href="javascript:void(0)" onclick="build({{ build.id }})">buduj</a>   </td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+
+

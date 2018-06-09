@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+<form action="/login" method="POST">
+    login: <br> <input type="text" name="login"> <br>
+    password: <br><input type="password" name="password">
+    <input type="submit" value="zaloguj sie">
+ </form> <br>
+{% if result %}{{result}}{% endif %}
+
+
+<br>
+Nie masz konta?
+<a class="btn btn-success" href="/register" role="button">zarejestruj się</a>
+
+{% endblock %}

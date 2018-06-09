@@ -1,0 +1,38 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+app_main_index:
+    path: /
+    controller: App\Controller\MainController::index
+
+app_contact_index:
+    path: /contact
+    controller: App\Controller\ContactController::index
+
+app_user_login:
+    path: /login
+    controller: App\Controller\UserController::login
+app_user_logout:
+    path: /logout
+    controller: App\Controller\UserController::logout
+app_user_register:
+    path: /register
+    controller: App\Controller\UserController::register
+# login:
+#     path:       /login
+#     controller: App\Controller\SecurityController::login
+
+
+blog_list:
+    path:      /build/{id}
+    controller: App\Controller\ajax\BuildController::create
+    requirements:
+        page: '\d+'
+build_check:
+    path:      /checkBuilds
+    controller: App\Controller\ajax\BuildController::check
+
+
+app_build_index:
+    path: /builds
+    controller: App\Controller\BuildController::index

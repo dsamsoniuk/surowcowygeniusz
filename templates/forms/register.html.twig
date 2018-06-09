@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+<div>
+    <h4>Rejestracja</h4>
+</div>
+{% if result %}<div style="color:blue;">{{result}}</div>{% endif %}
+
+<form action="/register" method="POST">
+<div class="form-group">
+    <label for="exampleInputEmail1">Login</label>
+    <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp" placeholder="Podaj login">
+    <small id="emailHelp" class="form-text text-muted">Walidator na login</small>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" id="password" placeholder="Podaj hasło">
+  </div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Podaj email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">username</label>
+    <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Podaj nazwe uzytkownika">
+  </div>
+  <input type="submit" class="btn btn-primary" value="Zarejestruj się">
+
+</form>
+
+
+{% endblock %}
