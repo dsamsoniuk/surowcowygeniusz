@@ -13,3 +13,10 @@ body {
     background-color: #14dc2321;
     border-radius: 12px;
 }
+
+.box_build {
+    float: left;
+    display: block;
+    max-width:200px;
+    max-height: 200px;
+}

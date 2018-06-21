@@ -12,6 +12,9 @@ Encore
 
     // uncomment to define the assets of the project
     .addEntry('js/main', './assets/js/main.js')
+    .addEntry('js/image1', './assets/images/bud1.gif')
+    .addEntry('js/image2', './assets/images/bud2.gif')
+
     .addStyleEntry('css/style', './assets/css/style.css')
     .addStyleEntry('css/bootstrap', './assets/css/bootstrap.css')
     .enableSassLoader(function(sassOptions) {}, {resolveUrlLoader: false})

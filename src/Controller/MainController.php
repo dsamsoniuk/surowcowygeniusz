@@ -26,11 +26,10 @@ class MainController extends Controller
             if ($user) {
                 $result = "Witaj, ".$user->getUsername();
             }
-            $repository     = $this->getDoctrine()->getRepository(User::class);
-            $user           = $repository->find($user_id);
+
             $repo           = $this->getDoctrine()->getRepository(User2build::class);
             $builds_prog    = $repo->findBy(["user" => $user]);
-            
+      
             $progres_list          = array();
             if ($builds_prog) {
                 foreach ($builds_prog as $build) {

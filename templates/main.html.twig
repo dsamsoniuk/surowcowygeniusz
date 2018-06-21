@@ -6,26 +6,27 @@
     {{result}}
 {%endif%}
 
+<div style="clear:both;"></div>
+<hr>
 {% if builds%}
 
-<div class="container">
-    <div id="info"></div>
-  <h3>Budynki zrobione</h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nazwa</th>
-      </tr>
-    </thead>
-    <tbody id="builds">
-        {% for b in builds %}
-        <tr>
-          <td>{{b.build.name}}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+
+{% for b in builds %}
+
+<div class="box_build">
+    <div class="box_build_title">{{b.build.name}}</div>
+    <div class="box_build_content">
+        {%if b.build.type == "chata"%}
+          <img src="{{ asset('build/images/bud1.d0fe524e.gif') }}" alt="">
+        {% elseif b.build.type == "budynek"%}
+          <img src="{{ asset('build/images/bud2.31bc096d.gif') }}" alt="">
+        {%else%}
+      {%endif%}
+    </div>
+  </div>
+{% endfor %}
+
+
 {%endif%}
 
 
